@@ -7,7 +7,7 @@ const Header = () => {
 
     useEffect(() => {
         getCategories().then((newCategories) => {
-            setCategories(newCategories);
+            setCategories(newCategories.map(obj => obj.categories).map(o => o[0]));
         });
     }, []);
 
@@ -22,9 +22,9 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="hidden md:float-left md:contents">
-                    {categories.map(category => (
-                        <Link key={category.slug} href={`/category/${category.slug}`}>
-                            <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
+                    {categories.map((category, index) => (
+                        <Link key={index} href={`/category/${category.slug}`}>
+                            <span className="transition duration-500 ease hover:text-pink-300 md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
                                 {category.name}
                             </span>
                         </Link>
