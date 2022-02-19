@@ -3,6 +3,7 @@ import Head from 'next/head'
 import PostCard from '../components/PostCard'
 import PostWidget from '../components/PostWidget'
 import Categories from '../components/Categories'
+import Footer from '../components/Footer'
 import FeaturedPosts from '../sections/FeaturedPosts'
 
 import { getPosts } from '../services'
@@ -13,8 +14,8 @@ export default function Home({ posts } ) {
   return (
     <div className="container mx-auto px-10 mb-8">
         <Head>
-            <title>NeededCode Blog</title>
-            <link rel="icon" href="/favicon.ico" />
+            <title>NeededCode</title>
+            <link rel="icon" href="/rocket.ico" />
         </Head>
         <FeaturedPosts/>
         {/* Here we will loop through our posts */}
@@ -31,11 +32,20 @@ export default function Home({ posts } ) {
                 </div>
             </div>
         </div>
+        {/*<Footer />*/}
     </div>
   )
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//     const posts = (await getPosts()) || []
+//
+//     return {
+//         props: { posts }
+//     }
+// }
+
+export async function getServerSideProps() {
     const posts = (await getPosts()) || []
 
     return {
