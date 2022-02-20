@@ -87,7 +87,7 @@ const Footer = ({slug}) => {
                     </div>
                     {/* Related Posts column*/}
                     <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start text-[#d84b00]">
                         Related Posts
                         </h6>
                         {relatedPosts.map((relatedPost, index) => (
@@ -98,7 +98,7 @@ const Footer = ({slug}) => {
                     </div>
                     {/* Categories column*/}
                     <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start text-[#d84b00]">
                             Categories
                         </h6>
                         {categories.map((category, index) => (
@@ -109,7 +109,7 @@ const Footer = ({slug}) => {
                     </div>
                     {/* Contact column*/}
                     <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start text-[#d84b00]">
                             Contact
                         </h6>
                         <p className="flex items-center justify-center md:justify-start mb-4">

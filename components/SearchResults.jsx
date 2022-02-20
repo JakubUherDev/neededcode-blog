@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Categories = () => {
+const SearchResults = () => {
     return (
         <div>
-            
+
         </div>
     );
 };
 
-export default Categories;
+export default SearchResults;

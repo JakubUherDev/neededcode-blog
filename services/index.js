@@ -92,6 +92,27 @@ export const getCategories = async () => {
     return result.posts
 };
 
+export const getAllCategories = async () => {
+    const query = gql`
+    query s {
+      categories {
+        name
+        badgeColor
+        slug
+        tags {
+          name
+        }
+        description {
+          text
+        }
+      }
+    }
+  `;
+    const result = await request(graphqlAPI, query);
+    return result
+};
+
+
 export const getPostDetails = async (slug) => {
     const query = gql`
     query GetPostDetails($slug : String!) {

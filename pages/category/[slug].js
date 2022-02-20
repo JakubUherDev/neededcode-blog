@@ -3,9 +3,11 @@ import { useRouter } from 'next/router';
 
 import { getCategories, getCategoryPost } from '../../services';
 import PostCard from '../../components/PostCard';
-import Categories from '../../components/Categories';
+import CategoriesWidget from '../../components/CategoriesWidget';
 import Loader from '../../components/Loader';
 import FeaturedPosts from "../../sections/FeaturedPosts";
+import PostWidget from "../../components/PostWidget";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const CategoryPost = ({ posts }) => {
     const router = useRouter();
@@ -17,6 +19,7 @@ const CategoryPost = ({ posts }) => {
     return (
     <div className="container mx-auto px-10 mb-8">
             {/*<FeaturedPosts/>*/}
+            <Breadcrumbs post={posts[0].node} categoryOnly={true}/>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div className="col-span-1 lg:col-span-8">
                     {posts.map((post, index) => (
@@ -25,7 +28,8 @@ const CategoryPost = ({ posts }) => {
                 </div>
                 <div className="col-span-1 lg:col-span-4">
                     <div className="relative lg:sticky top-8">
-                        <Categories />
+                        <PostWidget/>
+                        <CategoriesWidget />
                     </div>
                 </div>
             </div>
